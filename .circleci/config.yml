@@ -1,12 +1,10 @@
 version: 2
 jobs:
- build:
-   working_directory: ~/temp
-   docker:
-    - image: circleci/node:7
+  build:
+    working_directory: ~/tmp
+    docker:
+      - image: circleci/node:7
     steps:
-     - checkout
-     - run npm install
-     - run npm test 
-     
-     
+      - checkout
+      - run: npm install
+- run: npm test
